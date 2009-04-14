@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="Publicacion" table="PUBLICACION" schema="PUBLIC">
+		<id name="idPublicacion" type="int">
+			<column name="ID_PUBLICACION" />
+			<generator class="native" />
+		</id>
+		<property name="titulo" type="string">
+			<column name="TITULO" length="100" not-null="true" />
+		</property>
+		<property name="numCitas" type="java.lang.Integer">
+			<column name="NUM_CITAS" />
+		</property>
+		<set name="externos" inverse="true" table="PUBLICA_EXTERNO">
+			<key>
+				<column name="ID_PUBLICACION" not-null="true" />
+			</key>
+			<many-to-many entity-name="Externo">
+				<column name="ID_AUTOR" not-null="true" />
+			</many-to-many>
+		</set>
+		<set name="articuloCongresos" inverse="true">
+			<key>
+				<column name="ID_PUBLICACION" not-null="true"
+					unique="true" />
+			</key>
+			<one-to-many class="ArticuloCongreso" />
+		</set>
+		<set name="capitulos" inverse="true">
+			<key>
+				<column name="ID_PUBLICACION" not-null="true"
+					unique="true" />
+			</key>
+			<one-to-many class="Capitulo" />
+		</set>
+		<set name="investigadors" inverse="true" table="PUBLICA">
+			<key>
+				<column name="ID_PUBLICACION" not-null="true" />
+			</key>
+			<many-to-many entity-name="Investigador">
+				<column name="ID_AUTOR" not-null="true" />
+			</many-to-many>
+		</set>
+		<set name="libros" inverse="true">
+			<key>
+				<column name="ID_PUBLICACION" not-null="true"
+					unique="true" />
+			</key>
+			<one-to-many class="Libro" />
+		</set>
+		<set name="tesises" inverse="true">
+			<key>
+				<column name="ID_PUBLICACION" not-null="true"
+					unique="true" />
+			</key>
+			<one-to-many class="Tesis" />
+		</set>
+		<set name="articuloRevistas" inverse="true">
+			<key>
+				<column name="ID_PUBLICACION" not-null="true"
+					unique="true" />
+			</key>
+			<one-to-many class="ArticuloRevista" />
+		</set>
+
+		<!-- TESIS -->
+
+		<joined-subclass name="Tesis" table="TESIS">
+
+			<key column="ID_PUBLICACION" />
+
+			<many-to-one name="autorByIdCodirector" class="Autor"
+				fetch="select">
+				<column name="ID_CODIRECTOR" />
+			</many-to-one>
+			<many-to-one name="autorByIdDirector" class="Autor"
+				fetch="select">
+				<column name="ID_DIRECTOR" not-null="true" />
+			</many-to-one>
+			<many-to-one name="publicacion" class="Publicacion"
+				update="false" insert="false" fetch="select">
+				<column name="ID_PUBLICACION" not-null="true"
+					unique="true" />
+			</many-to-one>
+			<property name="calificacion" type="string">
+				<column name="CALIFICACION" length="20" />
+			</property>
+			<property name="fechaLectura" type="date">
+				<column name="FECHA_LECTURA" length="0" />
+			</property>
+		</joined-subclass>
+		
+		<!-- ARTICULO REVISTA -->
+		
+		<joined-subclass name="ArticuloRevista" table="ARTICULO_REVISTA" schema="PUBLIC">
+            <key column="ID_PUBLICACION" />
+        <many-to-one name="numero" class="Numero" fetch="select">
+            <column name="ID_NUMERO" not-null="true" />
+        </many-to-one>
+        <many-to-one name="publicacion" class="Publicacion" update="false" insert="false" fetch="select">
+            <column name="ID_PUBLICACION" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="paginaInicio" type="java.lang.Integer">
+            <column name="PAGINA_INICIO" />
+        </property>
+        <property name="paginaFin" type="java.lang.Integer">
+            <column name="PAGINA_FIN" />
+        </property>
+    </joined-subclass>
+    
+    <!-- LIBRO -->
+    
+    <joined-subclass name="Libro" table="LIBRO" schema="PUBLIC">
+        <key column="ID_PUBLICACION" />
+        <many-to-one name="publicacion" class="Publicacion" update="false" insert="false" fetch="select">
+            <column name="ID_PUBLICACION" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="editorial" type="string">
+            <column name="EDITORIAL" length="80" not-null="true" />
+        </property>
+        <property name="anyo" type="java.lang.Integer">
+            <column name="ANYO" />
+        </property>
+    </joined-subclass>
+	
+	<!-- ARTICULO DE CONGRESO -->
+	
+	 <joined-subclass name="ArticuloCongreso" table="ARTICULO_CONGRESO" schema="PUBLIC">
+        <key column="ID_PUBLICACION" />
+        <many-to-one name="edicion" class="Edicion" fetch="select">
+            <column name="ID_EDICION" not-null="true" />
+        </many-to-one>
+        <many-to-one name="publicacion" class="Publicacion" update="false" insert="false" fetch="select">
+            <column name="ID_PUBLICACION" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="paginaInicio" type="int">
+            <column name="PAGINA_INICIO" not-null="true" />
+        </property>
+        <property name="paginaFin" type="int">
+            <column name="PAGINA_FIN" not-null="true" />
+        </property>
+    </joined-subclass>
+	
+	</class>
+</hibernate-mapping>

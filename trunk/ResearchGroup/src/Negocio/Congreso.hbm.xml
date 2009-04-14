@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="Congreso" table="CONGRESO" schema="PUBLIC">
+        <id name="idCongreso" type="int">
+            <column name="ID_CONGRESO" />
+            <generator class="assigned" />
+        </id>
+        <property name="idEdicion" type="int">
+            <column name="ID_EDICION" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="80" />
+        </property>
+        <property name="entidad" type="string">
+            <column name="ENTIDAD" length="100" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="TIPO" length="60" />
+        </property>
+        <set name="edicions" inverse="true">
+            <key>
+                <column name="ID_CONGRESO" not-null="true" />
+            </key>
+            <one-to-many class="Edicion" />
+        </set>
+    </class>
+</hibernate-mapping>

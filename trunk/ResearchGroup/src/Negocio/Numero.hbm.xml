@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="Numero" table="NUMERO" schema="PUBLIC">
+        <id name="idNumero" type="int">
+            <column name="ID_NUMERO" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="revista" class="Revista" fetch="select">
+            <column name="ID_REVISTA" not-null="true" />
+        </many-to-one>
+        <property name="numero" type="int">
+            <column name="NUMERO" not-null="true" />
+        </property>
+        <property name="volumen" type="java.lang.Integer">
+            <column name="VOLUMEN" />
+        </property>
+        <property name="anyo" type="string">
+            <column name="ANYO" length="10" />
+        </property>
+        <property name="indiceImpacto" type="java.lang.Double">
+            <column name="INDICE_IMPACTO" precision="17" scale="0" />
+        </property>
+        <set name="articuloRevistas" inverse="true">
+            <key>
+                <column name="ID_NUMERO" not-null="true" />
+            </key>
+            <one-to-many class="ArticuloRevista" />
+        </set>
+    </class>
+</hibernate-mapping>

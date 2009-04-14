@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="Grupo" table="GRUPO" schema="PUBLIC">
+        <id name="idGrupo" type="int">
+            <column name="ID_GRUPO" />
+            <generator class="native" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="80" not-null="true" />
+        </property>
+        <property name="lineasInvestigacion" type="string">
+            <column name="LINEAS_INVESTIGACION" length="400" not-null="true" />
+        </property>
+        <set name="proyectos" inverse="true">
+            <key>
+                <column name="ID_GRUPO" not-null="true" />
+            </key>
+            <one-to-many class="Proyecto" />
+        </set>
+        <set name="investigadors" inverse="true">
+            <key>
+                <column name="ID_GRUPO" />
+            </key>
+            <one-to-many class="Investigador" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="Dedicacion" table="DEDICACION" schema="PUBLIC">
+        <composite-id name="id" class="DedicacionId">
+            <key-property name="idProyecto" type="int">
+                <column name="ID_PROYECTO" />
+            </key-property>
+            <key-property name="idAutor" type="int">
+                <column name="ID_AUTOR" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="proyecto" class="Proyecto" update="false" insert="false" fetch="select">
+            <column name="ID_PROYECTO" not-null="true" />
+        </many-to-one>
+        <many-to-one name="investigador" class="Investigador" update="false" insert="false" fetch="select">
+            <column name="ID_AUTOR" not-null="true" />
+        </many-to-one>
+        <property name="esTiempoCompleto" type="int">
+            <column name="ES_TIEMPO_COMPLETO" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

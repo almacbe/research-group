@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="Organismo" table="ORGANISMO" schema="PUBLIC">
+        <id name="idOrganismo" type="int">
+            <column name="ID_ORGANISMO" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="proyecto" class="Proyecto" fetch="select">
+            <column name="ID_PROYECTO" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="60" not-null="true" />
+        </property>
+        <property name="cuantia" type="double">
+            <column name="CUANTIA" precision="17" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

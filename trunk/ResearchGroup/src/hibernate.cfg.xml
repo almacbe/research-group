@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost/research_group</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+        <mapping resource="Negocio/Autor.hbm.xml"/>
+        <mapping resource="Negocio/Capitulo.hbm.xml"/>
+        <mapping resource="Negocio/Congreso.hbm.xml"/>
+        <mapping resource="Negocio/Dedicacion.hbm.xml"/>
+        <mapping resource="Negocio/Edicion.hbm.xml"/>
+        <mapping resource="Negocio/Grupo.hbm.xml"/>
+        <mapping resource="Negocio/Numero.hbm.xml"/>
+        <mapping resource="Negocio/Organismo.hbm.xml"/>
+        <mapping resource="Negocio/Participantes.hbm.xml"/>
+        <mapping resource="Negocio/Proyecto.hbm.xml"/>
+        <mapping resource="Negocio/Publicacion.hbm.xml"/>
+        <mapping resource="Negocio/Revista.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

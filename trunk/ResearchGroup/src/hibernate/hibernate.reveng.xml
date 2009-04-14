@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-schema="PUBLIC" match-name=".*"/>
+  <table-filter match-schema="PUBLIC" match-name="ARTICULO_CONGRESO"/>
+  <table-filter match-schema="PUBLIC" match-name="ARTICULO_REVISTA"/>
+  <table-filter match-schema="PUBLIC" match-name="AUTOR"/>
+  <table-filter match-schema="PUBLIC" match-name="CAPITULO"/>
+  <table-filter match-schema="PUBLIC" match-name="CONGRESO"/>
+  <table-filter match-schema="PUBLIC" match-name="DEDICACION"/>
+  <table-filter match-schema="PUBLIC" match-name="EDICION"/>
+  <table-filter match-schema="PUBLIC" match-name="EXTERNO"/>
+  <table-filter match-schema="PUBLIC" match-name="GRUPO"/>
+  <table-filter match-schema="PUBLIC" match-name="INVESTIGADOR"/>
+  <table-filter match-schema="PUBLIC" match-name="LIBRO"/>
+  <table-filter match-schema="PUBLIC" match-name="NUMERO"/>
+  <table-filter match-schema="PUBLIC" match-name="ORGANISMO"/>
+  <table-filter match-schema="PUBLIC" match-name="PARTICIPANTES"/>
+  <table-filter match-schema="PUBLIC" match-name="PROYECTO"/>
+  <table-filter match-schema="PUBLIC" match-name="PUBLICA"/>
+  <table-filter match-schema="PUBLIC" match-name="PUBLICACION"/>
+  <table-filter match-schema="PUBLIC" match-name="PUBLICA_EXTERNO"/>
+  <table-filter match-schema="PUBLIC" match-name="RESPONSABLE"/>
+  <table-filter match-schema="PUBLIC" match-name="REVISTA"/>
+  <table-filter match-schema="PUBLIC" match-name="TESIS"/>
+</hibernate-reverse-engineering>

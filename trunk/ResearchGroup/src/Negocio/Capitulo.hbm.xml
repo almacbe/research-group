@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="Capitulo" table="CAPITULO" schema="PUBLIC">
+        <id name="idPublicacion" type="int">
+            <column name="ID_PUBLICACION" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="publicacion" class="Publicacion" update="false" insert="false" fetch="select">
+            <column name="ID_PUBLICACION" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="tituloLibro" type="string">
+            <column name="TITULO_LIBRO" length="60" not-null="true" />
+        </property>
+        <property name="editorial" type="string">
+            <column name="EDITORIAL" length="80" />
+        </property>
+        <property name="anyo" type="java.lang.Integer">
+            <column name="ANYO" />
+        </property>
+    </class>
+</hibernate-mapping>
