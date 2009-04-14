@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="Edicion" table="EDICION" schema="PUBLIC">
+        <id name="idEdicion" type="int">
+            <column name="ID_EDICION" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="congreso" class="Congreso" fetch="select">
+            <column name="ID_CONGRESO" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="80" not-null="true" />
+        </property>
+        <property name="pais" type="string">
+            <column name="PAIS" length="80" />
+        </property>
+        <property name="isbn" type="string">
+            <column name="ISBN" length="10" />
+        </property>
+        <property name="fechaInicio" type="date">
+            <column name="FECHA_INICIO" length="0" />
+        </property>
+        <property name="fechaFin" type="date">
+            <column name="FECHA_FIN" length="0" />
+        </property>
+        <property name="indiceImpacto" type="java.lang.Double">
+            <column name="INDICE_IMPACTO" precision="17" scale="0" />
+        </property>
+        <property name="ciudad" type="string">
+            <column name="CIUDAD" length="60" />
+        </property>
+        <set name="articuloCongresos" inverse="true">
+            <key>
+                <column name="ID_EDICION" not-null="true" />
+            </key>
+            <one-to-many class="ArticuloCongreso" />
+        </set>
+    </class>
+</hibernate-mapping>

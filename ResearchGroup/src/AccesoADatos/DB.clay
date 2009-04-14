@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clay-model clay-version="1.2.0">
+<database-model alias="" author="" begin-script="" end-script="" name="DB" remarks="" sql-dialect-id="jp.azzurri.clay.model.physical.dialect.HSQLDB_1_7_0_Dialect" version="1.0">
+<database-model-description/>
+<schema-list>
+<schema alias="" name="DEFAULT_SCHEMA" remarks="">
+<schema-description/>
+<domain-list/>
+<table-list>
+<table alias="" name="PARTICIPANTES" remarks="">
+<table-description/>
+<table-figure-bounds height="99" width="205" x="13" y="399"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PARTICPANTES" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="50" decimal-digits="0" default-value="" mandatory="true" name="NOMBRE_UNIVERSIDAD" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="NUM_PARTICIPANTES" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PROYECTO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INT" selected-variant-pattern="INT">
+<variant type-name-pattern="INT"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_PARTICIPANTES" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PARTICPANTES"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_PARTICIPANTES_1" on-delete="" on-update="" referenced-key="PK_PROYECTO" referenced-table="PROYECTO" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PROYECTO" referenced-key-column-name="ID_PROYECTO"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="ORGANISMO" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="26" y="35"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_ORGANISMO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="60" decimal-digits="0" default-value="" mandatory="true" name="NOMBRE" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="CUANTIA" remarks="">
+<column-description/>
+<data-type jdbc-type="6" name="FLOAT" selected-variant-pattern="FLOAT">
+<variant type-name-pattern="FLOAT"/>
+<variant precision-max="15" precision-min="1" precision-variable="%n" type-name-pattern="FLOAT(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PROYECTO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INT" selected-variant-pattern="INT">
+<variant type-name-pattern="INT"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_ORGANISMO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_ORGANISMO"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_ORGANISMO_1" on-delete="" on-update="" referenced-key="PK_PROYECTO" referenced-table="PROYECTO" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PROYECTO" referenced-key-column-name="ID_PROYECTO"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="GRUPO" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="295" y="-9"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_GRUPO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="true" name="NOMBRE" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="400" decimal-digits="0" default-value="" mandatory="true" name="LINEAS_INVESTIGACION" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_GRUPO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_GRUPO"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="PROYECTO" remarks="">
+<table-description/>
+<table-figure-bounds height="105" width="178" x="40" y="202"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PROYECTO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INT" selected-variant-pattern="INT">
+<variant type-name-pattern="INT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="true" name="TITULO" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="FECHA_INICIO" remarks="">
+<column-description/>
+<data-type jdbc-type="91" literal-prefix="'" literal-suffix="'" name="DATE" selected-variant-pattern="DATE">
+<variant type-name-pattern="DATE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="FECHA_FIN" remarks="">
+<column-description/>
+<data-type jdbc-type="91" literal-prefix="'" literal-suffix="'" name="DATE" selected-variant-pattern="DATE">
+<variant type-name-pattern="DATE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="60" decimal-digits="0" default-value="" mandatory="false" name="TIPO_PROYECTO" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_GRUPO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_PROYECTO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PROYECTO"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_PROYECTO_1" on-delete="" on-update="" referenced-key="PK_GRUPO" referenced-table="GRUPO" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_GRUPO" referenced-key-column-name="ID_GRUPO"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="PUBLICACION" remarks="">
+<table-description/>
+<table-figure-bounds height="80" width="180" x="299" y="453"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PUBLICACION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="100" decimal-digits="0" default-value="" mandatory="true" name="TITULO" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="NUM_CITAS" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_PUBLICACION" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PUBLICACION"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="AUTOR" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="1060" y="465"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_AUTOR" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="60" decimal-digits="0" default-value="" mandatory="true" name="NOMBRE" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_AUTOR" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_AUTOR"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="INVESTIGADOR" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="636" y="65"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_AUTOR" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="9" decimal-digits="0" default-value="" mandatory="true" name="DNI" remarks="">
+<column-description/>
+<data-type jdbc-type="1" literal-prefix="'" literal-suffix="'" name="CHAR" selected-variant-pattern="CHAR(%n)">
+<variant precision-max="254" precision-min="1" precision-variable="%n" type-name-pattern="CHAR(%n)"/>
+<variant type-name-pattern="CHAR"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="false" name="E_MAIL" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="ID_GRUPO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="50" decimal-digits="0" default-value="" mandatory="true" name="TIPO" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="FECHA_INICIO" remarks="">
+<column-description/>
+<data-type jdbc-type="91" literal-prefix="'" literal-suffix="'" name="DATE" selected-variant-pattern="DATE">
+<variant type-name-pattern="DATE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="LIDER_GRUPO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_INVESTIGADOR" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_AUTOR"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_INVESTIGADOR_1" on-delete="" on-update="" referenced-key="PK_AUTOR" referenced-table="AUTOR" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_AUTOR" referenced-key-column-name="ID_AUTOR"/>
+</foreign-key>
+<foreign-key alias="" name="FK_INVESTIGADOR_2" on-delete="" on-update="" referenced-key="PK_GRUPO" referenced-table="GRUPO" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_GRUPO" referenced-key-column-name="ID_GRUPO"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="EXTERNO" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="927" y="54"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_AUTOR" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="true" name="UNIVERSIDAD" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_EXTERNO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_AUTOR"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_EXTERNO_1" on-delete="" on-update="" referenced-key="PK_AUTOR" referenced-table="AUTOR" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_AUTOR" referenced-key-column-name="ID_AUTOR"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="LIBRO" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="249" y="687"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PUBLICACION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="true" name="EDITORIAL" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="ANYO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_LIBRO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PUBLICACION"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_LIBRO_1" on-delete="" on-update="" referenced-key="PK_PUBLICACION" referenced-table="PUBLICACION" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PUBLICACION" referenced-key-column-name="ID_PUBLICACION"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="ARTICULO_CONGRESO" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="62" y="622"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PUBLICACION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="PAGINA_INICIO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="PAGINA_FIN" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_EDICION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_ARTICULO_CONGRESO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PUBLICACION"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_ARTICULO_CONGRESO_1" on-delete="" on-update="" referenced-key="PK_PUBLICACION" referenced-table="PUBLICACION" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PUBLICACION" referenced-key-column-name="ID_PUBLICACION"/>
+</foreign-key>
+<foreign-key alias="" name="FK_ARTICULO_CONGRESO_2" on-delete="" on-update="" referenced-key="PK_EDICION" referenced-table="EDICION" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_EDICION" referenced-key-column-name="ID_EDICION"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="ARTICULO_REVISTA" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="532" y="707"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PUBLICACION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_NUMERO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="PAGINA_INICIO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="PAGINA_FIN" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_ARTICULO_REVISTA" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PUBLICACION"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_ARTICULO_REVISTA_1" on-delete="" on-update="" referenced-key="PK_PUBLICACION" referenced-table="PUBLICACION" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PUBLICACION" referenced-key-column-name="ID_PUBLICACION"/>
+</foreign-key>
+<foreign-key alias="" name="FK_ARTICULO_REVISTA_2" on-delete="" on-update="" referenced-key="PK_NUMERO" referenced-table="NUMERO" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_NUMERO" referenced-key-column-name="ID_NUMERO"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="TESIS" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="796" y="613"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PUBLICACION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="20" decimal-digits="0" default-value="" mandatory="false" name="CALIFICACION" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="FECHA_LECTURA" remarks="">
+<column-description/>
+<data-type jdbc-type="91" literal-prefix="'" literal-suffix="'" name="DATE" selected-variant-pattern="DATE">
+<variant type-name-pattern="DATE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_DIRECTOR" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="ID_CODIRECTOR" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_TESIS" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PUBLICACION"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_TESIS_1" on-delete="" on-update="" referenced-key="PK_PUBLICACION" referenced-table="PUBLICACION" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PUBLICACION" referenced-key-column-name="ID_PUBLICACION"/>
+</foreign-key>
+<foreign-key alias="" name="FK_TESIS_2" on-delete="" on-update="" referenced-key="PK_AUTOR" referenced-table="AUTOR" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_DIRECTOR" referenced-key-column-name="ID_AUTOR"/>
+</foreign-key>
+<foreign-key alias="" name="FK_TESIS_3" on-delete="" on-update="" referenced-key="PK_AUTOR" referenced-table="AUTOR" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_CODIRECTOR" referenced-key-column-name="ID_AUTOR"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="CAPITULO" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="684" y="783"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PUBLICACION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="60" decimal-digits="0" default-value="" mandatory="true" name="TITULO_LIBRO" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="false" name="EDITORIAL" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="ANYO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_CAPITULO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PUBLICACION"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_CAPITULO_1" on-delete="" on-update="" referenced-key="PK_PUBLICACION" referenced-table="PUBLICACION" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PUBLICACION" referenced-key-column-name="ID_PUBLICACION"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="CONGRESO" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="57" y="1001"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_CONGRESO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_EDICION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="false" name="NOMBRE" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="100" decimal-digits="0" default-value="" mandatory="false" name="ENTIDAD" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="60" decimal-digits="0" default-value="" mandatory="false" name="TIPO" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_CONGRESO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_CONGRESO"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="REVISTA" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="368" y="1010"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_REVISTA" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="100" decimal-digits="0" default-value="" mandatory="true" name="NOMBRE" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="false" name="EDITORIAL" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="false" name="ISSN" remarks="">
+<column-description/>
+<data-type jdbc-type="1" literal-prefix="'" literal-suffix="'" name="CHAR" selected-variant-pattern="CHAR(%n)">
+<variant precision-max="254" precision-min="1" precision-variable="%n" type-name-pattern="CHAR(%n)"/>
+<variant type-name-pattern="CHAR"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="60" decimal-digits="0" default-value="" mandatory="false" name="TIPO" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_REVISTA" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_REVISTA"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="EDICION" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="150" y="786"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_EDICION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_CONGRESO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="true" name="NOMBRE" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="80" decimal-digits="0" default-value="" mandatory="false" name="PAIS" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="10" decimal-digits="0" default-value="" mandatory="false" name="ISBN" remarks="">
+<column-description/>
+<data-type jdbc-type="1" literal-prefix="'" literal-suffix="'" name="CHAR" selected-variant-pattern="CHAR(%n)">
+<variant precision-max="254" precision-min="1" precision-variable="%n" type-name-pattern="CHAR(%n)"/>
+<variant type-name-pattern="CHAR"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="FECHA_INICIO" remarks="">
+<column-description/>
+<data-type jdbc-type="91" literal-prefix="'" literal-suffix="'" name="DATE" selected-variant-pattern="DATE">
+<variant type-name-pattern="DATE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="FECHA_FIN" remarks="">
+<column-description/>
+<data-type jdbc-type="91" literal-prefix="'" literal-suffix="'" name="DATE" selected-variant-pattern="DATE">
+<variant type-name-pattern="DATE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="INDICE_IMPACTO" remarks="">
+<column-description/>
+<data-type jdbc-type="6" name="FLOAT" selected-variant-pattern="FLOAT">
+<variant type-name-pattern="FLOAT"/>
+<variant precision-max="15" precision-min="1" precision-variable="%n" type-name-pattern="FLOAT(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="60" decimal-digits="0" default-value="" mandatory="false" name="CIUDAD" remarks="">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="32672" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_EDICION" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_EDICION"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_EDICION_1" on-delete="" on-update="" referenced-key="PK_CONGRESO" referenced-table="CONGRESO" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_CONGRESO" referenced-key-column-name="ID_CONGRESO"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="NUMERO" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="471" y="851"/>
+<column-list>
+<column alias="" auto-increment="true" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_NUMERO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_REVISTA" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="NUMERO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="VOLUMEN" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="10" decimal-digits="0" default-value="" mandatory="false" name="ANYO" remarks="">
+<column-description/>
+<data-type jdbc-type="1" literal-prefix="'" literal-suffix="'" name="CHAR" selected-variant-pattern="CHAR(%n)">
+<variant precision-max="254" precision-min="1" precision-variable="%n" type-name-pattern="CHAR(%n)"/>
+<variant type-name-pattern="CHAR"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="INDICE_IMPACTO" remarks="">
+<column-description/>
+<data-type jdbc-type="6" name="FLOAT" selected-variant-pattern="FLOAT">
+<variant type-name-pattern="FLOAT"/>
+<variant precision-max="15" precision-min="1" precision-variable="%n" type-name-pattern="FLOAT(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_NUMERO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_NUMERO"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_NUMERO_1" on-delete="" on-update="" referenced-key="PK_REVISTA" referenced-table="REVISTA" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_REVISTA" referenced-key-column-name="ID_REVISTA"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="DEDICACION" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="381" y="289"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ES_TIEMPO_COMPLETO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PROYECTO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INT" selected-variant-pattern="INT">
+<variant type-name-pattern="INT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_AUTOR" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_DEDICACION" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PROYECTO"/>
+<primary-key-column name="ID_AUTOR"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_DEDICACION_1" on-delete="" on-update="" referenced-key="PK_PROYECTO" referenced-table="PROYECTO" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PROYECTO" referenced-key-column-name="ID_PROYECTO"/>
+</foreign-key>
+<foreign-key alias="" name="FK_DEDICACION_2" on-delete="" on-update="" referenced-key="PK_INVESTIGADOR" referenced-table="INVESTIGADOR" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_AUTOR" referenced-key-column-name="ID_AUTOR"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="RESPONSABLE" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="377" y="137"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PROYECTO" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INT" selected-variant-pattern="INT">
+<variant type-name-pattern="INT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_AUTOR" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_RESPONSABLE" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PROYECTO"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_RESPONSABLE_1" on-delete="" on-update="" referenced-key="PK_PROYECTO" referenced-table="PROYECTO" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PROYECTO" referenced-key-column-name="ID_PROYECTO"/>
+</foreign-key>
+<foreign-key alias="" name="FK_RESPONSABLE_2" on-delete="" on-update="" referenced-key="PK_INVESTIGADOR" referenced-table="INVESTIGADOR" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_AUTOR" referenced-key-column-name="ID_AUTOR"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="PUBLICA" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="620" y="350"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_AUTOR" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PUBLICACION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_PUBLICA" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_AUTOR"/>
+<primary-key-column name="ID_PUBLICACION"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_PUBLICA_1" on-delete="" on-update="" referenced-key="PK_INVESTIGADOR" referenced-table="INVESTIGADOR" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_AUTOR" referenced-key-column-name="ID_AUTOR"/>
+</foreign-key>
+<foreign-key alias="" name="FK_PUBLICA_2" on-delete="" on-update="" referenced-key="PK_PUBLICACION" referenced-table="PUBLICACION" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PUBLICACION" referenced-key-column-name="ID_PUBLICACION"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="PUBLICA_EXTERNO" remarks="">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="784" y="440"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_PUBLICACION" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="ID_AUTOR" remarks="">
+<column-description/>
+<data-type jdbc-type="4" name="INTEGER" selected-variant-pattern="INTEGER">
+<variant type-name-pattern="INTEGER"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_PUBLICA_EXTERNO" remarks="">
+<primary-key-description/>
+<primary-key-column name="ID_PUBLICACION"/>
+<primary-key-column name="ID_AUTOR"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_PUBLICA_EXTERNO_1" on-delete="" on-update="" referenced-key="PK_PUBLICACION" referenced-table="PUBLICACION" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_PUBLICACION" referenced-key-column-name="ID_PUBLICACION"/>
+</foreign-key>
+<foreign-key alias="" name="FK_PUBLICA_EXTERNO_2" on-delete="" on-update="" referenced-key="PK_EXTERNO" referenced-table="EXTERNO" referenced-table-schema="DEFAULT_SCHEMA" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ID_AUTOR" referenced-key-column-name="ID_AUTOR"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+</clay-model>

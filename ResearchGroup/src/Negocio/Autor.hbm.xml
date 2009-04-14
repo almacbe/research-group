@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="Autor" table="AUTOR" schema="PUBLIC">
+		<id name="idAutor" type="int">
+			<column name="ID_AUTOR" />
+			<generator class="native" />
+		</id>
+		<property name="nombre" type="string">
+			<column name="NOMBRE" length="60" not-null="true" />
+		</property>
+		<set name="externos" inverse="true">
+			<key>
+				<column name="ID_AUTOR" not-null="true" unique="true" />
+			</key>
+			<one-to-many class="Externo" />
+		</set>
+		<set name="tesisesForIdCodirector" inverse="true">
+			<key>
+				<column name="ID_CODIRECTOR" />
+			</key>
+			<one-to-many class="Tesis" />
+		</set>
+		<set name="tesisesForIdDirector" inverse="true">
+			<key>
+				<column name="ID_DIRECTOR" not-null="true" />
+			</key>
+			<one-to-many class="Tesis" />
+		</set>
+		<set name="investigadors" inverse="true">
+			<key>
+				<column name="ID_AUTOR" not-null="true" unique="true" />
+			</key>
+			<one-to-many class="Investigador" />
+		</set>
+
+		<!-- INVESTIGADOR -->
+
+		<joined-subclass name="Investigador" table="INVESTIGADOR">
+			<key column="ID_AUTOR" />
+
+			<many-to-one name="grupo" class="Grupo" fetch="select">
+				<column name="ID_GRUPO" />
+			</many-to-one>
+			<many-to-one name="autor" class="Autor" update="false"
+				insert="false" fetch="select">
+				<column name="ID_AUTOR" not-null="true" unique="true" />
+			</many-to-one>
+			<property name="dni" type="string">
+				<column name="DNI" length="9" not-null="true" />
+			</property>
+			<property name="EMail" type="string">
+				<column name="E_MAIL" length="80" />
+			</property>
+			<property name="tipo" type="string">
+				<column name="TIPO" length="50" not-null="true" />
+			</property>
+			<property name="fechaInicio" type="date">
+				<column name="FECHA_INICIO" length="0" />
+			</property>
+			<property name="liderGrupo" type="java.lang.Integer">
+				<column name="LIDER_GRUPO" />
+			</property>
+			<set name="proyectos" inverse="true" table="RESPONSABLE">
+				<key>
+					<column name="ID_AUTOR" not-null="true" />
+				</key>
+				<many-to-many entity-name="Proyecto">
+					<column name="ID_PROYECTO" not-null="true"
+						unique="true" />
+				</many-to-many>
+			</set>
+			<set name="publicacions" inverse="true" table="PUBLICA">
+				<key>
+					<column name="ID_AUTOR" not-null="true" />
+				</key>
+				<many-to-many entity-name="Publicacion">
+					<column name="ID_PUBLICACION" not-null="true" />
+				</many-to-many>
+			</set>
+			<set name="dedicacions" inverse="true">
+				<key>
+					<column name="ID_AUTOR" not-null="true" />
+				</key>
+				<one-to-many class="Dedicacion" />
+			</set>
+		</joined-subclass>
+		
+		<!-- EXTERNO -->
+		
+		<joined-subclass name="Externo" table="EXTERNO">
+
+			<key column="ID_AUTOR" />
+
+			<many-to-one name="autor" class="Autor" update="false"
+				insert="false" fetch="select">
+				<column name="ID_AUTOR" not-null="true" unique="true" />
+			</many-to-one>
+			<property name="universidad" type="string">
+				<column name="UNIVERSIDAD" length="80" not-null="true" />
+			</property>
+			<set name="publicacions" inverse="true"
+				table="PUBLICA_EXTERNO">
+				<key>
+					<column name="ID_AUTOR" not-null="true" />
+				</key>
+				<many-to-many entity-name="Publicacion">
+					<column name="ID_PUBLICACION" not-null="true" />
+				</many-to-many>
+			</set>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

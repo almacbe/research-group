@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-abr-2009 11:33:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="Proyecto" table="PROYECTO" schema="PUBLIC">
+        <id name="idProyecto" type="int">
+            <column name="ID_PROYECTO" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="grupo" class="Grupo" fetch="select">
+            <column name="ID_GRUPO" not-null="true" />
+        </many-to-one>
+        <property name="titulo" type="string">
+            <column name="TITULO" length="80" not-null="true" />
+        </property>
+        <property name="fechaInicio" type="date">
+            <column name="FECHA_INICIO" length="0" not-null="true" />
+        </property>
+        <property name="fechaFin" type="date">
+            <column name="FECHA_FIN" length="0" />
+        </property>
+        <property name="tipoProyecto" type="string">
+            <column name="TIPO_PROYECTO" length="60" />
+        </property>
+        <set name="investigadors" inverse="true" table="RESPONSABLE">
+            <key>
+                <column name="ID_PROYECTO" not-null="true" unique="true" />
+            </key>
+            <many-to-many entity-name="Investigador">
+                <column name="ID_AUTOR" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="participanteses" inverse="true">
+            <key>
+                <column name="ID_PROYECTO" not-null="true" />
+            </key>
+            <one-to-many class="Participantes" />
+        </set>
+        <set name="organismos" inverse="true">
+            <key>
+                <column name="ID_PROYECTO" not-null="true" />
+            </key>
+            <one-to-many class="Organismo" />
+        </set>
+        <set name="dedicacions" inverse="true">
+            <key>
+                <column name="ID_PROYECTO" not-null="true" />
+            </key>
+            <one-to-many class="Dedicacion" />
+        </set>
+    </class>
+</hibernate-mapping>
